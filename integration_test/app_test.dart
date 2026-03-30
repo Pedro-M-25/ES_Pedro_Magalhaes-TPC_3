@@ -37,9 +37,7 @@ void main() {
       final appBarFinder = find.byType(AppBar);
       expect(appBarFinder, findsOneWidget, reason: 'Deve existir uma AppBar no ecrã');
 
-      final BuildContext context = tester.element(materialAppFinder);
-      final ThemeData theme = Theme.of(context);
-      expect(theme.colorScheme.primary, Colors.orange, reason: 'A paleta de cores principal tem de ser laranja');
+      expect(materialAppWidget.theme?.primaryColor, Colors.orange, reason: 'A paleta de cores principal tem de ser laranja');
       
 
 
