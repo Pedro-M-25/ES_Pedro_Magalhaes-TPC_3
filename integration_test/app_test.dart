@@ -8,7 +8,7 @@ void main() {
 
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  group('Hello Name App - Acceptance Tests Avançados', () {
+  group('HelloNameApp - Acceptance Tests', () {
 
     testWidgets('Deve validar todas as configurações visuais e estruturais da app', (WidgetTester tester) async {
 
@@ -18,7 +18,9 @@ void main() {
 
       final materialAppFinder = find.byType(MaterialApp);
       expect(materialAppFinder, findsOneWidget, reason: 'A app deve usar um MaterialApp');
-      
+
+
+
       final MaterialApp materialAppWidget = tester.widget<MaterialApp>(materialAppFinder);
       expect(materialAppWidget.debugShowCheckedModeBanner, false, reason: 'O banner de debug deve estar desativado');
 
@@ -26,17 +28,31 @@ void main() {
       expect(materialAppWidget.theme?.useMaterial3, false, reason: 'A app deve estar configurada com useMaterial3: false');
 
 
+
+      final scaffoldFinder = find.byType(Scaffold);
+      expect(scaffoldFinder, findsOneWidget, reason: 'O ecrã deve usar a estrutura de um Scaffold');
+
+
+
       final appBarFinder = find.byType(AppBar);
       expect(appBarFinder, findsOneWidget, reason: 'Deve existir uma AppBar no ecrã');
+
+      final BuildContext context = tester.element(materialAppFinder);
+      final ThemeData theme = Theme.of(context);
+      expect(theme.colorScheme.primary, Colors.orange, reason: 'A paleta de cores principal tem de ser laranja');
       
+
+
       final AppBar appBarWidget = tester.widget<AppBar>(appBarFinder);
       expect(appBarWidget.centerTitle, true, reason: 'O título da AppBar deve estar centrado');
       expect(find.descendant(of: appBarFinder, matching: find.text('Hello')), findsOneWidget, reason: 'O título da AppBar deve ser "Hello"');
 
 
+
       final greetingMessage = 'Hi! my name is Pedro';
       final textFinder = find.text(greetingMessage);
       expect(textFinder, findsOneWidget, reason: 'A mensagem principal deve estar visível');
+
 
 
       final Text textWidget = tester.widget<Text>(textFinder);
@@ -45,9 +61,11 @@ void main() {
       expect(textWidget.textAlign, TextAlign.center, reason: 'O alinhamento interno do texto deve ser centrado');
 
 
+
       // layout
       final centerFinder = find.ancestor(of: textFinder, matching: find.byType(Center));
-      expect(centerFinder, findsWidgets, reason: 'O texto deve estar envolvido por um widget Center para garantir o layout');
+      expect(centerFinder, findsOneWidget, reason: 'O texto deve estar envolvido por um widget Center para garantir o layout');
+
 
     });
 
