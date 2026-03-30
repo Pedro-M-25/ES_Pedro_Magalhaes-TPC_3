@@ -21,13 +21,17 @@ Devido à natureza estática da aplicação (ausência de fluxos de navegação 
 **Cenário:** O utilizador lança a aplicação e valida a estrutura do ecrã principal.
 
 * **Dado** que a aplicação é iniciada com sucesso num dispositivo ou emulador.
-* **Então** o banner de "Debug" deve estar oculto para garantir uma versão final limpa.
+* **Quando** o utilizador visualiza o ecrã principal.
+* **Então** o banner de "Debug" deve estar oculto.
+* **E** a aplicação deve estar configurada com Material 3 desativado.
 * **E** deve ser visível uma `AppBar` com o título "Hello" centralizado.
+* **E** o tema da aplicação deve definir a cor primária como laranja.
 * **E** deve ser exibida a mensagem `"Hi! my name is Pedro"` no centro do ecrã.
 * **E** o texto da mensagem deve respeitar as especificações de estilo:
     * **Tamanho da fonte:** 28
     * **Espessura (Weight):** w500 (Medium)
     * **Alinhamento:** Center
+* **E** a mensagem deve estar centrada no layout através de um widget `Center`
 
 ---
 
