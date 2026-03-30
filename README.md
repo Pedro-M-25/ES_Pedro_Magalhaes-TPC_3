@@ -1,7 +1,7 @@
 # TPC#3 - Testes de aceitação automatizados (Flutter)
 
 **`!!Atenção!!`** Este README.md não é o relatório das atividades pedido na tarefa, serve apenas como uma contextualização geral acompanhada de alguns detalhes complementares.
-O relatório solicitado como *deliverable* está **anexado à tarefa no moodle**, no entanto também pode ser encontrado [aqui](../docs/Relatório_TPC3).
+O relatório solicitado como *deliverable* está **anexado à tarefa no moodle**, no entanto também pode ser encontrado [aqui](../docs/Relatorio_TPC3.pdf).
 
 Este repositório contém a implementação de testes de aceitação automatizados para a aplicação desenvolvida no âmbito do `TPC#1`. O objetivo deste trabalho é demonstrar a capacidade de verificar e validar requisitos de software através de ferramentas de automação em ambiente Flutter.
 
